@@ -18,7 +18,14 @@ public class Order {
         return meals;
     }
 
-    public void clearOrder() {
+    @Override
+    public String toString() {
+        return "Order{" +
+                "meals=" + meals +
+                '}';
+    }
+
+    public void cancel() {
         meals.clear();
     }
 }

@@ -1,5 +1,6 @@
 package org.ursus.intro;
 
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -17,6 +18,12 @@ class OrderTest {
     void initializeOrder() {
         // method that will be executed before each test
         order = new Order();
+    }
+
+    @AfterEach
+    void cleanUp() {
+        // method that will be executed after each test
+        order.cancel();
     }
 
     @Test
