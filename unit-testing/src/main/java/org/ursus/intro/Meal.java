@@ -5,8 +5,23 @@ import java.util.Objects;
 public class Meal {
 
 
+    public int getQuantity() {
+        return quantity;
+    }
 
+    private int quantity;
     private int price;
+
+    public Meal(int quantity, int price, String name) {
+        this.quantity = quantity;
+        this.price = price;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     private String name;
 
     public Meal(int price, String name) {
