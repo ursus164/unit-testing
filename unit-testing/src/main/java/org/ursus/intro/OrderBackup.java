@@ -25,6 +25,9 @@ public class OrderBackup {
     }
 
     public void backupOrder(Order order) throws IOException {
+        if(writer == null) {
+            throw new IOException("Backup file doesn't exist");
+        }
         writer.append(order.toString());
     }
 

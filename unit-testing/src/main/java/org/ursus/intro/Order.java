@@ -28,4 +28,14 @@ public class Order {
     public void cancel() {
         meals.clear();
     }
+
+    int totalPrice() {
+        int sum = this.meals.stream().mapToInt(Meal::getPrice).sum();
+
+        if(sum < 0) {
+            throw new IllegalStateException("Price limit exceeded");
+        } else {
+            return sum;
+        }
+    }
 }

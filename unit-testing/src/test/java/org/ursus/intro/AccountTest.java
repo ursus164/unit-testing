@@ -65,12 +65,39 @@ public class AccountTest {
         assertThat(defaultAddress, is(notNullValue()));
     }
 
+//    Repairing in Jacoco - possible task for presentation
+    @Test
+    public void accountShouldNotBeActiveWhenCreatedWithNullAddress() {
+        // given
+        Address address = null;
 
+        // when
+        Account account = new Account(address);
 
+        // then
+        assertThat(account.isActive(), is(false));
+    }
 
+    @Test
+    void invalidEmailShouldThrowException() {
+        // given
+        Account account = new Account();
 
+        // when
+        // then
+        assertThrows(IllegalArgumentException.class, () -> account.setEmail("invalidEmail"));
+    }
 
+//    Second code coverage repair - possible task
+    @Test
+    void validEmailShouldBeSet() {
+        // given
+        Account account = new Account();
 
+        // when
+        account.setEmail("kontakt@example.com");
+        assertThat(account.getEmail(), is("kontakt@example.com"));
+    }
 
     @Test
     void newAccountWithNotNullAddressShouldBeActive() {
