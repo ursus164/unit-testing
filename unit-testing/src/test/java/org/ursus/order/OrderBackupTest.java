@@ -1,11 +1,10 @@
-package org.ursus.intro;
+package org.ursus.order;
 
 import org.junit.jupiter.api.*;
+import org.ursus.Meal;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class OrderBackupTest {
     private static OrderBackup orderBackup;
@@ -41,7 +40,7 @@ class OrderBackupTest {
     void backupOrderWithOneMeal() throws IOException {
         // given
         Meal meal = new Meal(10, "Burger");
-        Order order = new Order();
+        org.ursus.order.Order order = new Order();
         order.addMealToOrder(meal);
 
         // when

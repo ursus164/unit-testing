@@ -1,4 +1,4 @@
-package org.ursus.intro;
+package org.ursus.account;
 
 public class Address {
     private String street;

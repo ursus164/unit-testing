@@ -1,4 +1,4 @@
-package org.ursus.intro;
+package org.ursus.account;
 
 import org.junit.jupiter.api.Test;
 

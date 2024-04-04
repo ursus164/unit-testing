@@ -1,4 +1,6 @@
-package org.ursus.intro;
+package org.ursus.order;
+
+import org.ursus.order.Order;
 
 import java.io.*;
 

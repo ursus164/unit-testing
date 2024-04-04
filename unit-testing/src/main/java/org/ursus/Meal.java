@@ -1,4 +1,4 @@
-package org.ursus.intro;
+package org.ursus;
 
 import java.util.Objects;
 

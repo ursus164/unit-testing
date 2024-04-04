@@ -1,8 +1,10 @@
-package org.ursus.intro;
+package org.ursus.order;
 
+import org.hamcrest.MatcherAssert;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.ursus.Meal;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,13 +19,11 @@ class OrderTest {
     @BeforeEach
     void initializeOrder() {
         // method that will be executed before each test
-        order = new Order();
     }
 
     @AfterEach
     void cleanUp() {
         // method that will be executed after each test
-        order.cancel();
     }
 
     @Test
@@ -38,12 +38,9 @@ class OrderTest {
 
     @Test
     void mealListShouldBeEmptyAfterCreationOfOrder() {
-        // given
-//        Order order = new Order();
-
-        // then
+        //(...)
         assertThat(order.getMeals(), is(empty()));
-        assertThat(order.getMeals(), emptyCollectionOf(Meal.class));
+        MatcherAssert.assertThat(order.getMeals(), emptyCollectionOf(Meal.class));
     }
 
     @Test

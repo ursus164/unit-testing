@@ -1,4 +1,7 @@
-package org.ursus.intro;
+package org.ursus.cart;
+
+import org.ursus.Meal;
+import org.ursus.order.Order;
 
 import java.util.ArrayList;
 import java.util.List;

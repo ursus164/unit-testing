@@ -1,7 +1,9 @@
-package org.ursus.intro;
+package org.ursus.cart;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.ursus.cart.Cart;
+import org.ursus.order.Order;
 
 import java.time.Duration;
 

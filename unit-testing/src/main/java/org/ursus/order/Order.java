@@ -1,9 +1,14 @@
-package org.ursus.intro;
+package org.ursus.order;
+
+import org.ursus.Meal;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
+    private OrderStatus orderStatus;
+
+
     private List<Meal> meals = new ArrayList<>();
 
     public void addMealToOrder(Meal meal) {
@@ -25,14 +30,22 @@ public class Order {
                 '}';
     }
 
+    public OrderStatus getOrderStatus() {
+        return orderStatus;
+    }
+
+    public void changeOrderStatus(OrderStatus orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
     public void cancel() {
         meals.clear();
     }
 
-    int totalPrice() {
+    public int totalPrice() {
         int sum = this.meals.stream().mapToInt(Meal::getPrice).sum();
 
-        if(sum < 0) {
+        if (sum < 0) {
             throw new IllegalStateException("Price limit exceeded");
         } else {
             return sum;

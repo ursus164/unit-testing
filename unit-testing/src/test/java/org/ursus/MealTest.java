@@ -1,4 +1,4 @@
-package org.ursus.intro;
+package org.ursus;
 
 import org.junit.jupiter.api.DynamicTest;
 import org.junit.jupiter.api.Tag;
@@ -9,6 +9,8 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.ursus.Meal;
+import org.ursus.order.Order;
 
 import java.util.*;
 import java.util.stream.Stream;
@@ -79,14 +81,11 @@ class MealTest {
     @ParameterizedTest
     @MethodSource("createMealsWithNameAndPrice")
     void foodNameShouldBeEqualToValuePassedAsParameter(String name, int price) {
-        // testing if the name of the meal contains the word "burger" and the price is greater than 10
         assertThat(name, containsString("burger"));
         assertThat(price, greaterThanOrEqualTo(10));
-
     }
 
     private static Stream<Arguments> createMealsWithNameAndPrice() {
-        // helper method to create a stream of arguments
         return Stream.of(
                 Arguments.of("Baconburger", 20),
                 Arguments.of("Hamburger", 10),
@@ -97,13 +96,11 @@ class MealTest {
     @ParameterizedTest
     @MethodSource("createCakeNames")
     void cakeNameShouldEndWithCake(String name) {
-        // testing if the name of the cake ends with "cake"
         assertThat(name, endsWith("cake"));
         assertThat(name, notNullValue());
     }
 
     private static Stream<String> createCakeNames() {
-        // helper method to create a stream of arguments
         List<String> cakeNames = Arrays.asList("Cheesecake", "Fruitcake", "Cupcake");
         return cakeNames.stream();
     }
